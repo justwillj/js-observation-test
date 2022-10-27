@@ -5,7 +5,7 @@ const startGame = (event) => {
     for (let i = 0; i <= 25; i++) {
       let btn = document.createElement("button");
       btn.innerText = randomNumber(1, 25);
-      btn.setAttribute("class", "btnCheck");
+      btn.setAttribute("class", "tile");
       btn.setAttribute("id", btn.innerText);
 
       btnDiv.appendChild(btn);
