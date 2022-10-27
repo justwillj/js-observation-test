@@ -14,5 +14,4 @@ const shuffleButtons = (array) => {
 }
 
 
-
 console.log(shuffleArray(numArray));
