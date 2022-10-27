@@ -1,0 +1,37 @@
+html {
+    text-decoration-color: #fffafa;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #e7feff;
+}
+
+#start {
+    background-color: #2e95d5;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: large;
+}
+
+.grid {
+    /*Black border and lines between tiles black*/
+    border: 2px solid #000000;
+}
+
+.tile {
+    /*Red if incorrect, green if correct, defaults to orange*/
+    background-color: #6a5acd;
+    }
+    
+.hover {
+    font-weight: bold;
+}
+
+.click {
+
+}
+
+#correct {
+    background-color: #027302;
+}
