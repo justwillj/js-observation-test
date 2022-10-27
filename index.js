@@ -3,6 +3,7 @@ const startGame = (event) => {
   for (let i = 0; i <= 25; i++) {
     let btn = document.createElement("button");
     btn.innerText = randomNumber(1, 25);
+    btn.className = 'tile';
     btnDiv.appendChild(btn);
   }
 };

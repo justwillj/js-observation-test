@@ -5,6 +5,7 @@ html {
 
 body {
     background-color: #e7feff;
+    justify-content: center;
 }
 
 #start {
@@ -22,24 +23,26 @@ body {
     border-radius: 5px;
 }
 
-#grid {
+.grid {
     /*Black border and lines between tiles black*/
-    display: grid;
+    display: flex grid;
+    width: fit-content;
     border: 2px solid #000000;
-    grid-auto-columns: 5px;
-    grid-auto-rows: 5px;
+    grid-auto-columns: 50px;
+    grid-auto-rows: 50px;
     grid-gap: 1px;
 }
 
 .tile {
     /*Red if incorrect, green if correct, defaults to orange*/
-    background-color: #6a5acd;
+    background-color: #1B3E77;
     height: 5px;
     width: 5px;
     }
     
-.hover {
+.tile:hover {
     font-weight: bold;
+    cursor: pointer;
 }
 
 #correct {
