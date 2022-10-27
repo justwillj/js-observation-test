@@ -25,7 +25,7 @@ body {
 
 .grid {
     /*Black border and lines between tiles black*/
-    display: flex grid;
+    display: inline-grid;
     width: fit-content;
     border: 2px solid #000000;
     grid-auto-columns: 50px;
