@@ -14,6 +14,14 @@ body {
     font-size: large;
 }
 
+#win {
+    background-color: #991601;
+    text-decoration-color: #daa520;
+    font-weight: bold;
+    font-size: large;
+    border-radius: 5px;
+}
+
 #grid {
     /*Black border and lines between tiles black*/
     display: grid;
@@ -26,6 +34,8 @@ body {
 .tile {
     /*Red if incorrect, green if correct, defaults to orange*/
     background-color: #6a5acd;
+    height: 5px;
+    width: 5px;
     }
     
 .hover {
