@@ -14,9 +14,13 @@ body {
     font-size: large;
 }
 
-.grid {
+#grid {
     /*Black border and lines between tiles black*/
+    display: grid;
     border: 2px solid #000000;
+    grid-auto-columns: 5px;
+    grid-auto-rows: 5px;
+    grid-gap: 1px;
 }
 
 .tile {
