@@ -1,9 +1,18 @@
+let called = false;
 const startGame = (event) => {
   let btnDiv = document.querySelector("#buttons");
-  for (let i = 0; i <= 25; i++) {
-    let btn = document.createElement("button");
-    btn.innerText = randomNumber(1, 25);
-    btnDiv.appendChild(btn);
+  if (!called) {
+    for (let i = 0; i <= 25; i++) {
+      let btn = document.createElement("button");
+      btn.innerText = randomNumber(1, 25);
+      btnDiv.appendChild(btn);
+      called = true;
+    }
+  } else if (called === true) {
+    for (let i = 0; i <= 25; i++) {
+      let btnValue = btnDiv.getElementsByTagName("button")[i];
+      btnValue.innerText = randomNumber(1, 25);
+    }
   }
 };
 document.querySelector("#start").addEventListener("click", startGame);
