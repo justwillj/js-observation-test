@@ -1,6 +1,9 @@
 body {
     background-color: #e7feff;
     justify-content: center;
+    position: relative;
+    top: 0;
+    left: 0;
 }
 
 #start {
@@ -19,17 +22,9 @@ body {
     cursor: pointer;
 }
 
-#win {
-    background-color: #991601;
-    border: 1px transparent;
-    color: #daa520;
-    font-weight: bold;
-    font-size: large;
-    border-radius: 7px;
-}
-
 .grid {
-    /*Black border and lines between tiles black*/
+    z-index: 5;
+    position: relative;
     display: grid;
     width: min-content;
     justify-content: center;
@@ -58,4 +53,23 @@ body {
 
 #correct {
     background-color: #027302;
+}
+
+#win {
+    z-index: 1;
+    position: absolute;
+
+    text-align: center;
+    vertical-align: 50%;
+    line-height: 35px;
+    width: 20%;
+    height: 5%;
+    padding: 5%;
+
+    background-color: #991601;
+    border: 1px transparent;
+    color: #daa520;
+    font-weight: bold;
+    font-size: 300%;
+    border-radius: 50%;
 }
