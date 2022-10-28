@@ -2,7 +2,7 @@ let called = false;
 const startGame = (event) => {
   let btnDiv = document.querySelector("#buttons");
   if (!called) {
-    for (let i = 0; i < 25; i++) {
+    for (let i = 0; i <= 25; i++) {
       let btn = document.createElement("button");
       btn.innerText = randomNumber(1, 25);
       btn.setAttribute("class", "tile");
