@@ -35,8 +35,8 @@ body {
     margin: 8%;
     float: center;
     border: 1px transparent;
-    grid-template-columns: 40px;
-    grid-template-rows: 40px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 0.5px;
 }
 
