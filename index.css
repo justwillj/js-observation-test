@@ -45,8 +45,9 @@ body {
     background-color: #1B3E77;
     color: #fffafa;
     font-family: Arial, Helvetica, sans-serif;
-    height: 40px;
-    width: 40px;
+    font-size: larger;
+    height: 80px;
+    width: 80px;
     }
     
 .tile:hover {
