@@ -5,24 +5,31 @@ body {
 
 #start {
     background-color: #2e95d5;
-    border-radius: 3px;
+    padding: 2% 5%;
+    border: 1px transparent;
+    border-radius: 5px;
     color: #fffafa;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: large;
 }
 
+#start:hover {
+    cursor: pointer;
+}
+
 #win {
     background-color: #991601;
+    border: 1px transparent;
     color: #daa520;
     font-weight: bold;
     font-size: large;
-    border-radius: 5px;
+    border-radius: 7px;
 }
 
 .grid {
     /*Black border and lines between tiles black*/
-    display: flex grid;
+    display: grid;
     justify-content: center;
     padding: 0%;
     margin: 8%;
