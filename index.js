@@ -16,6 +16,7 @@ const startGame = (event) => {
     for (let i = 0; i < 25; i++) {
       let btnValue = btnDiv.getElementsByTagName("button")[i];
       btnValue.innerText = generateNumber(25);
+      btnValue.setAttribute("id", btnValue.innerText);
     }
   }
 };
@@ -28,9 +29,9 @@ const checkOrder = (event) => {
   console.log(btn);
 
   if (btn == currentAnswer) {
-      console.log("correct");
-      document.getElementById(btn).setAttribute("id", "correct");
-      currentAnswer += 1;
+    console.log("correct");
+    document.getElementById(btn).setAttribute("id", "correct");
+    currentAnswer += 1;
   }
 };
 document.querySelector("#buttons").addEventListener("click", checkOrder);
