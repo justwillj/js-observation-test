@@ -21,16 +21,16 @@ const startGame = (event) => {
 };
 document.querySelector("#start").addEventListener("click", startGame);
 
+let currentAnswer = 1;
 const checkOrder = (event) => {
   let btnDiv = document.querySelector("#buttons");
-  let btn = btnDiv.querySelector("button").innerText;
-  let lastBtn = 0;
+  let btn = event.target.getAttribute("id");
   console.log(btn);
-  if (btn - 1 === lastBtn) {
-    console.log("correct");
-    lastBtn++;
-  } else {
-    console.log("wrong");
+
+  if (btn == currentAnswer) {
+      console.log("correct");
+      document.getElementById(btn).setAttribute("id", "correct");
+      currentAnswer += 1;
   }
 };
 document.querySelector("#buttons").addEventListener("click", checkOrder);
