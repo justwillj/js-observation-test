@@ -1,4 +1,5 @@
 let called = false;
+
 const startGame = (event) => {
   let btnDiv = document.querySelector("#buttons");
 
@@ -27,12 +28,16 @@ let currentAnswer = 1;
 const checkOrder = (event) => {
   let btnDiv = document.querySelector("#buttons");
   let btn = event.target.getAttribute("id");
-  console.log(btn);
+  console.log(currentAnswer);
 
-  if (btn == currentAnswer) {
+  if (btn == currentAnswer && btn <= 24) {
     console.log("correct");
     document.getElementById(btn).setAttribute("id", "correct");
     currentAnswer += 1;
+  } else if (currentAnswer == 25) {
+    console.log("YOU WIN");
+    document.getElementById(btn).setAttribute("id", "correct");
+    document.getElementById("win").innerHTML = "YOU WIN!";
   }
 };
 document.querySelector("#buttons").addEventListener("click", checkOrder);
