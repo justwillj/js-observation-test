@@ -13,6 +13,7 @@ const startGame = (event) => {
     }
   } else if (called === true) {
     numberArray = [];
+    currentAnswer = 1;
     for (let i = 0; i < 25; i++) {
       let btnValue = btnDiv.getElementsByTagName("button")[i];
       btnValue.innerText = generateNumber(25);
