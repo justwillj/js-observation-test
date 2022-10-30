@@ -61,20 +61,20 @@ body {
     position: absolute;
 
     text-align: center;
-    vertical-align: 50%;
-    line-height: 35px;
-    width: 20%;
-    height: 5%;
-    padding: 5%;
+    vertical-align: 40%;
+    line-height: 100%;
+    width: 165px;
+    height: 20px;
+    padding: 60px;
 
     background-color: #991601;
     border: 1px transparent;
     color: #daa520;
     font-weight: bold;
-    font-size: 300%;
+    font-size: 180%;
     border-radius: 50%;
 
 
-    left: 150px;
-    bottom: 320px;
+    left: 11%;
+    bottom: 50%;
 }
