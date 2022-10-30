@@ -7,6 +7,7 @@
 let called = false;
 document.getElementById("win").style.visibility = "hidden";
 const startGame = (event) => {
+document.getElementById("win").style.visibility = "hidden";
   let btnDiv = document.querySelector("#buttons");
   if (!called) {      //First click begins game.
     for (let i = 0; i < 25; i++) {
@@ -41,7 +42,7 @@ const checkOrder = (event) => {
   if (btn == currentAnswer && btn <= 24) {    //Button background color changes green if button clicked matches current answer and button value is <= 24.
     document.getElementById(btn).setAttribute("id", "correct");
     currentAnswer += 1;
-  } else if (currentAnswer == 25) {     //Determines when the player wins.
+  } else if (currentAnswer == 25) {     //Determines when the player wins and displays win message.
     document.getElementById(btn).setAttribute("id", "correct");
     document.getElementById("win").innerHTML = "YOU WIN!";
     document.getElementById("win").style.visibility = "visible";
