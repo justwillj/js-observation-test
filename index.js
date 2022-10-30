@@ -5,10 +5,9 @@
  */
 
 let called = false;
-
+document.getElementById("win").style.visibility = "hidden";
 const startGame = (event) => {
   let btnDiv = document.querySelector("#buttons");
-  document.getElementById("win").style.visibility = "hidden";
   if (!called) {      //First click begins game.
     for (let i = 0; i < 25; i++) {
       let btn = document.createElement("button");
@@ -25,7 +24,6 @@ const startGame = (event) => {
       let btnValue = btnDiv.getElementsByTagName("button")[i];
       btnValue.innerText = generateNumber(25);
       btnValue.setAttribute("id", btnValue.innerText);
-      //document.getElementById("win").style.visibility = "hidden";
     }
   }
 };
