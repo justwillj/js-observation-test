@@ -7,9 +7,10 @@
 let called = false;
 document.getElementById("win").style.visibility = "hidden";
 const startGame = (event) => {
-document.getElementById("win").style.visibility = "hidden";
+  document.getElementById("win").style.visibility = "hidden";
   let btnDiv = document.querySelector("#buttons");
-  if (!called) {      //First click begins game.
+  if (!called) {
+    //First click begins game.
     for (let i = 0; i < 25; i++) {
       let btn = document.createElement("button");
       btn.innerText = generateNumber(25);
@@ -18,7 +19,8 @@ document.getElementById("win").style.visibility = "hidden";
       btnDiv.appendChild(btn);
       called = true;
     }
-  } else if (called === true) {    //Subsequent clicks resets the game.
+  } else if (called === true) {
+    //Subsequent clicks resets the game.
     numberArray = [];
     currentAnswer = 1;
     for (let i = 0; i < 25; i++) {
@@ -28,7 +30,6 @@ document.getElementById("win").style.visibility = "hidden";
     }
   }
 };
-document.querySelector("#start").addEventListener("click", startGame);
 
 /**
  * Checks value of clicked button against current answer. Adds event listener.
@@ -39,16 +40,17 @@ let currentAnswer = 1;
 const checkOrder = (event) => {
   let btn = event.target.getAttribute("id");
 
-  if (btn == currentAnswer && btn <= 24) {    //Button background color changes green if button clicked matches current answer and button value is <= 24.
+  if (btn == currentAnswer && btn <= 24) {
+    //Button background color changes green if button clicked matches current answer and button value is <= 24.
     document.getElementById(btn).setAttribute("id", "correct");
     currentAnswer += 1;
-  } else if (currentAnswer == 25) {     //Determines when the player wins and displays win message.
+  } else if (currentAnswer == 25) {
+    //Determines when the player wins and displays win message.
     document.getElementById(btn).setAttribute("id", "correct");
     document.getElementById("win").innerHTML = "YOU WIN!";
     document.getElementById("win").style.visibility = "visible";
   }
 };
-document.querySelector("#buttons").addEventListener("click", checkOrder);
 
 /**
  * Produces integers from 1 to 25 in random order.
@@ -68,3 +70,7 @@ function generateNumber(maxNumber) {
     }
   }
 }
+
+// addEventListeners for our 2 functions for the game
+document.querySelector("#start").addEventListener("click", startGame);
+document.querySelector("#buttons").addEventListener("click", checkOrder);
