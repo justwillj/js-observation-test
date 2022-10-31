@@ -4,33 +4,34 @@
  * @param {event} event Mouse Click
  */
 
-let called = false;
-document.getElementById("win").style.visibility = "hidden";
 const startGame = (event) => {
-  document.getElementById("win").style.visibility = "hidden";
+  //document.getElementById("win").style.visibility = "hidden";
   let btnDiv = document.querySelector("#buttons");
-  if (!called) {
-    //First click begins game.
-    for (let i = 0; i < 25; i++) {
-      let btn = document.createElement("button");
-      btn.innerText = generateNumber(25);
-      btn.setAttribute("class", "tile");
-      btn.setAttribute("id", btn.innerText);
-      btnDiv.appendChild(btn);
-      called = true;
-    }
-  } else if (called === true) {
-    //Subsequent clicks resets the game.
-    numberArray = [];
-    currentAnswer = 1;
-    for (let i = 0; i < 25; i++) {
-      let btnValue = btnDiv.getElementsByTagName("button")[i];
-      btnValue.innerText = generateNumber(25);
-      btnValue.setAttribute("id", btnValue.innerText);
-    }
+  //First click begins game.
+  document.getElementById("start").classList.remove("start");
+  document.getElementById("start").classList.add("hidden");
+  document.getElementById("refresh").classList.add("start");
+  document.getElementById("refresh").classList.remove("hidden");
+
+  for (let i = 0; i < 25; i++) {
+    let btn = document.createElement("button");
+    btn.innerText = generateNumber(25);
+    btn.setAttribute("class", "tile");
+    btn.setAttribute("id", btn.innerText);
+    btnDiv.appendChild(btn);
+  }
+  document.querySelector("#refresh").addEventListener("click", refresh);
+};
+const refresh = (event) => {
+  numberArray = [];
+  currentAnswer = 1;
+  let btnDiv = document.querySelector("#buttons");
+  for (let i = 0; i < 25; i++) {
+    let btnValue = btnDiv.getElementsByTagName("button")[i];
+    btnValue.innerText = generateNumber(25);
+    btnValue.setAttribute("id", btnValue.innerText);
   }
 };
-
 /**
  * Checks value of clicked button against current answer. Adds event listener.
  * @param {event} event Mouse Click
@@ -60,7 +61,6 @@ const answer = () => {
  * @returns {number} Returns integers in random order.
  */
 let numberArray = [];
-
 const generateNumber = (maxNumber) => {
   let randomNumber = Math.floor(Math.random() * maxNumber) + 1;
   if (!numberArray.includes(randomNumber)) {
@@ -76,3 +76,4 @@ const generateNumber = (maxNumber) => {
 // addEventListeners for our 2 functions for the game
 document.querySelector("#start").addEventListener("click", startGame);
 document.querySelector("#start").addEventListener("click", answer);
+document.querySelector("#refresh").addEventListener("click", answer);
