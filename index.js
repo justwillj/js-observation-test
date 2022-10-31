@@ -65,7 +65,7 @@ const answer = () => {
     } else if (currentAnswer == 25) {
       //Determines when the player wins and displays win message.
       document.getElementById(btn).setAttribute("id", "correct");
-      win = document.querySelector("p");
+      let win = document.querySelector("p");
       win.classList.remove("hidden");
       document.getElementById("win").innerHTML = "YOU WIN!";
       currentAnswer = 1;
