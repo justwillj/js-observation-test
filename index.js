@@ -5,9 +5,11 @@
  */
 
 const startGame = (event) => {
-  //document.getElementById("win").style.visibility = "hidden";
   let btnDiv = document.querySelector("#buttons");
-  let numArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25];
+  let numArray = [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+    22, 23, 24, 25,
+  ];
   //First click begins game.
   document.getElementById("start").classList.remove("start");
   document.getElementById("start").classList.add("hidden");
@@ -25,8 +27,11 @@ const startGame = (event) => {
 };
 const refresh = (event) => {
   currentAnswer = 1;
-  let numArray2 = [25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
-  win = document.querySelector("p");
+  let numArray2 = [
+    25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6,
+    5, 4, 3, 2, 1,
+  ];
+  let win = document.querySelector("p");
   win.classList.add("hidden");
   let btnDiv = document.querySelector("#buttons");
   for (let i = 0; i < 25; i++) {
@@ -35,15 +40,16 @@ const refresh = (event) => {
     btnValue.setAttribute("id", btnValue.innerText);
   }
 };
-
 /**
- * Checks value of clicked button against current answer. Adds event listener.
- * @param {event} event Mouse Click
+ * Stores the currentAnswer values for the checkOrder function
  */
-
 const answer = () => {
   let currentAnswer = 1;
 
+  /**
+   * Checks value of clicked button against current answer. Adds event listener.
+   * @param {event} event Mouse Click
+   */
   const checkOrder = (event) => {
     let btn = event.target.getAttribute("id");
     if (btn == currentAnswer && btn <= 24) {
@@ -58,7 +64,9 @@ const answer = () => {
       document.getElementById("win").innerHTML = "YOU WIN!";
       currentAnswer = 1;
     }
+    console.log(currentAnswer);
   };
+
   document.querySelector("#buttons").addEventListener("click", checkOrder);
 };
 
@@ -67,24 +75,26 @@ const answer = () => {
  * @param {number[]} array - An array of numbers.
  * @returns {number} Returns integers in random order.
  */
- 
 
- //Fisher-Yates shuffle
- const shuffleButtons = (array) => {
-     let currentIndex = array.length, randomNumber;
-     
-     while(currentIndex != 0){
-         randomNumber = Math.floor(Math.random() * currentIndex);
-         currentIndex--;
- 
-         [array[currentIndex], array[randomNumber]] = [array[randomNumber], array[currentIndex]];
-     }
-     //Return integers one at a time.
-     for(let i = 0; i < array.length; i++){
-        return array.pop();
-     }
- }
- 
+//Fisher-Yates shuffle
+const shuffleButtons = (array) => {
+  let currentIndex = array.length,
+    randomNumber;
+
+  while (currentIndex != 0) {
+    randomNumber = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    [array[currentIndex], array[randomNumber]] = [
+      array[randomNumber],
+      array[currentIndex],
+    ];
+  }
+  //Return integers one at a time.
+  for (let i = 0; i < array.length; i++) {
+    return array.pop();
+  }
+};
 
 // addEventListeners for our 2 functions for the game
 document.querySelector("#start").addEventListener("click", startGame);
