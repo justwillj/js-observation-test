@@ -35,21 +35,23 @@ const startGame = (event) => {
  * Checks value of clicked button against current answer. Adds event listener.
  * @param {event} event Mouse Click
  */
+const answer = () => {
+  let currentAnswer = 1;
 
-let currentAnswer = 1;
-const checkOrder = (event) => {
-  let btn = event.target.getAttribute("id");
-
-  if (btn == currentAnswer && btn <= 24) {
-    //Button background color changes green if button clicked matches current answer and button value is <= 24.
-    document.getElementById(btn).setAttribute("id", "correct");
-    currentAnswer += 1;
-  } else if (currentAnswer == 25) {
-    //Determines when the player wins and displays win message.
-    document.getElementById(btn).setAttribute("id", "correct");
-    document.getElementById("win").innerHTML = "YOU WIN!";
-    document.getElementById("win").style.visibility = "visible";
-  }
+  const checkOrder = (event) => {
+    let btn = event.target.getAttribute("id");
+    if (btn == currentAnswer && btn <= 24) {
+      //Button background color changes green if button clicked matches current answer and button value is <= 24.
+      document.getElementById(btn).setAttribute("id", "correct");
+      currentAnswer += 1;
+    } else if (currentAnswer == 25) {
+      //Determines when the player wins and displays win message.
+      document.getElementById(btn).setAttribute("id", "correct");
+      document.getElementById("win").innerHTML = "YOU WIN!";
+      document.getElementById("win").style.visibility = "visible";
+    }
+  };
+  document.querySelector("#buttons").addEventListener("click", checkOrder);
 };
 
 /**
@@ -59,7 +61,7 @@ const checkOrder = (event) => {
  */
 
 let numberArray = [];
-function generateNumber(maxNumber) {
+const generateNumber = (maxNumber) => {
   let randomNumber = Math.floor(Math.random() * maxNumber) + 1;
   if (!numberArray.includes(randomNumber)) {
     numberArray.push(randomNumber);
@@ -69,8 +71,7 @@ function generateNumber(maxNumber) {
       return generateNumber(maxNumber);
     }
   }
-}
-
+};
 // addEventListeners for our 2 functions for the game
 document.querySelector("#start").addEventListener("click", startGame);
-document.querySelector("#buttons").addEventListener("click", checkOrder);
+document.querySelector("#buttons").addEventListener("click", answer);
