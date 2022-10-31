@@ -1,6 +1,5 @@
 /**
- * Starts the game by creating a grid of shuffled numbers from 1 to 25. Subsequent clicks resets the game and shuffle numbers.
- * Adds event listener.
+ * Starts the game by creating a grid of shuffled numbers from 1 to 25. Adds event listener.
  * @param {event} event Mouse Click
  */
 
@@ -13,6 +12,7 @@ const startGame = (event) => {
   //First click begins game.
   document.getElementById("start").classList.remove("start");
   document.getElementById("start").classList.add("hidden");
+  //Displays start button with refresh function.
   document.getElementById("refresh").classList.add("start");
   document.getElementById("refresh").classList.remove("hidden");
 
@@ -25,6 +25,12 @@ const startGame = (event) => {
   }
   document.querySelector("#refresh").addEventListener("click", refresh);
 };
+
+/**
+ * Subsequent clicks resets the game and shuffle numbers. Adds event listener.
+ * @param {event} event Mouse Click
+ */
+
 const refresh = (event) => {
   currentAnswer = 1;
   let numArray2 = [
