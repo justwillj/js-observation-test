@@ -70,7 +70,6 @@ const answer = () => {
       document.getElementById("win").innerHTML = "YOU WIN!";
       currentAnswer = 1;
     }
-    console.log(currentAnswer);
   };
 
   document.querySelector("#buttons").addEventListener("click", checkOrder);
