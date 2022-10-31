@@ -81,6 +81,6 @@ body {
     bottom: 50%;
 }
 
-#hidden {
+.hidden {
     display: none;
 }
