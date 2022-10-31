@@ -53,9 +53,9 @@ body {
 }
 
 #correct {
-  background-color: #027302;
-  cursor: default;
-  font-weight: 100;
+    background-color: #027302;
+    cursor: default;
+    font-weight: 100;
 }
 
 #win {
@@ -80,8 +80,10 @@ body {
   bottom: 50%;
 }
 
+    left: 11%;
+    bottom: 50%;
+}
+
 .hidden {
-  display: none;
-  background-color: #991601;
-  visibility: hidden;
+    display: none;
 }
