@@ -24,7 +24,6 @@ const startGame = (event) => {
 };
 const refresh = (event) => {
   numberArray = [];
-  currentAnswer = 1;
   win = document.querySelector("p");
   win.classList.add("hidden");
   let btnDiv = document.querySelector("#buttons");
@@ -53,6 +52,7 @@ const answer = () => {
       win = document.querySelector("p");
       win.classList.remove("hidden");
       document.getElementById("win").innerHTML = "YOU WIN!";
+      currentAnswer = 1;
     }
   };
   document.querySelector("#buttons").addEventListener("click", checkOrder);
