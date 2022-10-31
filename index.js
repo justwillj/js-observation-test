@@ -64,7 +64,7 @@ const answer = () => {
 
 /**
  * Shuffles an array of integers from 1 to 25.
- * @param {maxNumber} number - Maximum number is 25.
+ * @param {number[]} array - An array of numbers.
  * @returns {number} Returns integers in random order.
  */
  
@@ -79,6 +79,7 @@ const answer = () => {
  
          [array[currentIndex], array[randomNumber]] = [array[randomNumber], array[currentIndex]];
      }
+     //Return integers one at a time.
      for(let i = 0; i < array.length; i++){
         return array.pop();
      }
