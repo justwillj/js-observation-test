@@ -59,8 +59,8 @@ const answer = () => {
  * @param {maxNumber} number - Maximum number is 25.
  * @returns {number} Returns integers in random order.
  */
-
 let numberArray = [];
+
 const generateNumber = (maxNumber) => {
   let randomNumber = Math.floor(Math.random() * maxNumber) + 1;
   if (!numberArray.includes(randomNumber)) {
@@ -72,6 +72,7 @@ const generateNumber = (maxNumber) => {
     }
   }
 };
+
 // addEventListeners for our 2 functions for the game
 document.querySelector("#start").addEventListener("click", startGame);
-document.querySelector("#buttons").addEventListener("click", answer);
+document.querySelector("#start").addEventListener("click", answer);
